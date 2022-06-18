@@ -1,7 +1,12 @@
-import React from "react";
+import { Layout } from "modules/layout/components/layout";
+import { Configurator } from "views/configurator";
 
 function App() {
-  return <div></div>;
+  return (
+    <Layout>
+      <Configurator />
+    </Layout>
+  );
 }
 
 export default App;
