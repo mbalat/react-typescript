@@ -11,20 +11,26 @@ export interface Ingredient {
   id: number;
   source: string;
   name: string;
+  price: number;
 }
 
 export const ConfiguratorSelector: React.FC = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([
-    { id: 0, source: chilliImg, name: "Chilli" },
-    { id: 1, source: cornImg, name: "Corn" },
-    { id: 2, source: eggImg, name: "Egg" },
-    { id: 3, source: pineappleImg, name: "Pineapple" },
+    { id: 0, source: chilliImg, name: "Chilli", price: 3.0 },
+    { id: 1, source: cornImg, name: "Corn", price: 2.0 },
+    { id: 2, source: eggImg, name: "Egg", price: 2.0 },
+    { id: 3, source: pineappleImg, name: "Pineapple", price: 2.0 },
   ]);
 
   return (
     <div css={wrapper__selector}>
       {ingredients.map((i: Ingredient) => (
-        <ConfiguratorButton id={i.id} source={i.source} name={i.name} />
+        <ConfiguratorButton
+          id={i.id}
+          source={i.source}
+          name={i.name}
+          price={i.price}
+        />
       ))}
     </div>
   );
